@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar sesión</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/miestilo.css">
+</head>
+
+<body>
+    <!--MENU DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="./index.html">
+                🛒 TechStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./lista.html">Listar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+                <!--<form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>-->
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sección de Login -->
+    <div class="login-section">
+        <div class="container mt-5 mb-5">
+            <div class="row align-items-center g-4">
+                <!-- Columna Izquierda: Formulario -->
+                <div class="col-lg-6">
+                    <div class="login-card">
+                        <div class="text-center mb-4">
+                            <h2 class="fw-bold text-dark">
+                                👤 Inicia Sesión
+                            </h2>
+                            <p class="text-muted">Accede a tu cuenta para comprar componentes de calidad</p>
+                        </div>
+
+                        <form>
+                            <div class="form-floating mb-">
+                                <input type="email" class="form-control border-0 shadow-sm" id="floatingInput"
+                                    placeholder="name@example.com" required>
+                                <label for="floatingInput">
+                                    Correo electrónico
+                                </label>
+                            </div>
+
+                            <div class="form-floating mb-4">
+                                <input type="password" class="form-control border-0 shadow-sm" id="floatingPassword"
+                                    placeholder="Password" required>
+                                <label for="floatingPassword">
+                                    Contraseña
+                                </label>
+                            </div>
+
+                            <!--<div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="showPassword">
+                                <label class="form-check-label" for="showPassword">
+                                    Mostrar contraseña
+                                </label>
+                            </div>-->
+
+                            <!--<div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="remember">
+                                <label class="form-check-label" for="remember">
+                                    Recuérdame en este dispositivo
+                                </label>
+                            </div>-->
+
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3 shadow-sm">
+                                ➜ Iniciar Sesión
+                            </button>
+
+                            <hr>
+
+                            <div class="text-center">
+                                <p class="mb-2">¿No tienes cuenta?
+                                    <a href="#" class="link-primary fw-bold">Regístrate aquí</a>
+                                </p>
+                                <p class="mb-0">
+                                    <a href="#" class="link-secondary small">¿Olvidaste tu contraseña?</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Columna Derecha: Imagen -->
+                <div class="col-lg-6">
+                    <div class="image-container text-center">
+                        <div class="placeholder-image">
+                            <img src="https://congreso.america-digital.com/anteriores/2017/wp-content/uploads/2017/05/LOGO-TECHSTORE-ESP.jpg"
+                                alt="Componentes de Computadora" class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                        <!--<div class="mt-4">
+                            <p class="text-muted small">
+                                <em> foto de mis componentes</em>
+                            </p>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 TechStore - Venta de Componentes de Computadora. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // Mostrar/Ocultar contraseña
+        const showPasswordCheckbox = document.getElementById('showPassword');
+        const passwordInput = document.getElementById('floatingPassword');
+
+        showPasswordCheckbox.addEventListener('change', function () {
+            if (this.checked) {
+                passwordInput.type = 'text'; // Mostrar contraseña
+            } else {
+                passwordInput.type = 'password'; // Ocultar contraseña
+            }
+        });
+    </script>
+</body>
+
+</html>

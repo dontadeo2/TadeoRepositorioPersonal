@@ -1,0 +1,621 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Lista de productos - TechStore</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/miestilo.css">
+    <style>
+        #scrollNavbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1030;
+            transform: translateY(-130%);
+            opacity: 0;
+            transition: transform 0.25s ease, opacity 0.25s ease;
+        }
+        #scrollNavbar.show-scroll {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        body {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+
+<body >
+    <nav id="scrollNavbar" class="navbar navbar-expand-lg navbar-light bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="./index.html">🛒 TechStore</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#scrollNavContent" aria-controls="scrollNavContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="scrollNavContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./lista.html">Listar</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./about.html">Acerca de</a></li>
+                    <li class="nav-item"><a class="nav-link" href="./login.html">Iniciar sesión</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!--MENU DE NAVEGACIÓN-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="./index.html">
+                🛒 TechStore
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./lista.html">Listar</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="./about.html">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+                <form id="searchForm" class="d-flex" role="search" onsubmit="return false;">
+                    <input id="searchInput" class="form-control me-2" type="search" placeholder="Buscar producto..." aria-label="Search" />
+                    <button class="btn btn-outline-success" type="button">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+    <!-- Contenedor principal -->
+    <div class="container mt-5 mb-5">
+        <h1 class="text-center mb-5 fw-bold">📦 Catálogo de Productos</h1>
+
+        <!-- PROCESADORES -->
+        <section id="procesadores" class="mb-5 pb-5" style="border-bottom: 2px solid #e0e0e0;">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">💾</span> Procesadores</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_601749-MLA92402370104_092025-O.webp"
+                            class="card-img-top" alt="Procesador Intel">
+                        <div class="card-body">
+                            <h5 class="card-title">Intel Core i9-13900K</h5>
+                            <p class="card-text">Procesador de alto rendimiento para gaming y productividad</p>
+                            <p class="text-muted mb-3">24 núcleos | 36 MB cache</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $650</li>
+                            <li class="list-group-item"><b>Stock:</b> 8 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://http2.mlstatic.com/D_NQ_NP_875983-MLA99370908240_112025-O.webp"
+                            class="card-img-top" alt="Procesador AMD">
+                        <div class="card-body">
+                            <h5 class="card-title">AMD Ryzen 9 7950X</h5>
+                            <p class="card-text">Excelente relación precio-rendimiento para profesionales</p>
+                            <p class="text-muted mb-3">16 núcleos | 64 MB cache</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $550</li>
+                            <li class="list-group-item"><b>Stock:</b> 12 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm">
+                        <img src="https://http2.mlstatic.com/D_NQ_NP_637849-MLA52678952836_122022-O.webp"
+                            class="card-img-top" alt="Procesador Intel i7">
+                        <div class="card-body">
+                            <h5 class="card-title">Intel Core i7-13700K</h5>
+                            <p class="card-text">Opción equilibrada para gaming y streaming</p>
+                            <p class="text-muted mb-3">16 núcleos | 30 MB cache</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $420</li>
+                            <li class="list-group-item"><b>Stock:</b> 10 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- TARJETAS GRÁFICAS -->
+        <section id="tarjetas-graficas" class="mb-5 pb-5" style="border-bottom: 2px solid #e0e0e0;">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">🎮</span> Tarjetas Gráficas</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://static.gigabyte.com/StaticFile/Image/Global/89788f96d441f6e6b4f239305692c9bc/Product/43836"
+                            class="card-img-top" alt="RTX 5090">
+                        <div class="card-body">
+                            <h5 class="card-title">NVIDIA RTX 5090</h5>
+                            <p class="card-text">La GPU más poderosa del mercado</p>
+                            <p class="text-muted mb-3">32 GB GDDR7 | 600W</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $2,300</li>
+                            <li class="list-group-item"><b>Stock:</b> 3 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a
+                                href="https://wa.me/593997882049?text=Hola,%20me%20interesa%20este%20producto"
+                                class="card-link">Comprar</a><a href="#" class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://storage-asset.msi.com/global/picture/product/product_1668045190e4886ef46b13298d252099c73e055ae6.webp"
+                            class="card-img-top" alt="RTX 4080">
+                        <div class="card-body">
+                            <h5 class="card-title">NVIDIA RTX 4080</h5>
+                            <p class="card-text">Excelente para gaming 4K y profesionales</p>
+                            <p class="text-muted mb-3">16 GB GDDR6X | 320W</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $1,200</li>
+                            <li class="list-group-item"><b>Stock:</b> 6 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a
+                                href="https://wa.me/593997882048?text=Hola,%20me%20interesa%20este%20producto"
+                                class="card-link">Comprar</a><a href="#" class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://www.bestcell.com.ec/imgadmin/storage/imagenes_articulos/1627/8477.jpg.webp"
+                            class="card-img-top" alt="RTX 4070">
+                        <div class="card-body">
+                            <h5 class="card-title">NVIDIA RTX 4070</h5>
+                            <p class="card-text">Relación precio-rendimiento óptima</p>
+                            <p class="text-muted mb-3">12 GB GDDR6X | 200W</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $550</li>
+                            <li class="list-group-item"><b>Stock:</b> 15 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FUENTES DE PODER -->
+        <section id="fuentes-poder" class="mb-5 pb-5" style="border-bottom: 2px solid #e0e0e0;">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">⚡</span> Fuentes de Poder</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://assets.corsair.com/image/upload/f_auto,q_auto/content/CP-9020180-NA-RM850x-PSU-01.png"
+                            class="card-img-top" alt="Fuente 850W">
+                        <div class="card-body">
+                            <h5 class="card-title">Corsair RM850x 850W 80+ Gold</h5>
+                            <p class="card-text">Fuente modular de alta calidad y eficiencia</p>
+                            <p class="text-muted mb-3">80+ Gold | 10 años garantía</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $150</li>
+                            <li class="list-group-item"><b>Stock:</b> 20 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://http2.mlstatic.com/D_NQ_NP_932607-MLU69774799996_062023-O.webp"
+                            class="card-img-top" alt="Fuente 650W">
+                        <div class="card-body">
+                            <h5 class="card-title">EVGA SuperNOVA 650W 80+ Gold</h5>
+                            <p class="card-text">Fuente confiable para sistemas mid-range</p>
+                            <p class="text-muted mb-3">80+ Gold | 7 años garantía</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $100</li>
+                            <li class="list-group-item"><b>Stock:</b> 25 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://c1.neweggimages.com/productimage/nb640/17-151-199_R01.jpg"
+                            class="card-img-top" alt="Fuente 1000W">
+                        <div class="card-body">
+                            <h5 class="card-title">Seasonic Prime GX-1000 1000W 80+ Gold</h5>
+                            <p class="card-text">Fuente para sistemas high-end y profesionales</p>
+                            <p class="text-muted mb-3">80+ Gold | DC output mode</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $200</li>
+                            <li class="list-group-item"><b>Stock:</b> 12 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- REFRIGERACIÓN -->
+        <section id="refrigeracion" class="mb-5 pb-5" style="border-bottom: 2px solid #e0e0e0;">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">🧊</span> Refrigeración</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://www.bestcell.com.ec/imgadmin/storage/imagenes_articulos/1584/8139.jpg.webp" class="card-img-top"
+                            alt="Enfriador Líquido">
+                        <div class="card-body">
+                            <h5 class="card-title">Corsair H150i Elite 360mm</h5>
+                            <p class="card-text">Refrigeración líquida de alto rendimiento</p>
+                            <p class="text-muted mb-3">3 ventiladores | 120mm</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $200</li>
+                            <li class="list-group-item"><b>Stock:</b> 8 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://m.media-amazon.com/images/I/61CGQH59UGL._AC_SL1000_.jpg" class="card-img-top"
+                            alt="Disipador de aire">
+                        <div class="card-body">
+                            <h5 class="card-title">be quiet! Dark Rock Pro 4</h5>
+                            <p class="card-text">Disipador de aire extremadamente eficiente</p>
+                            <p class="text-muted mb-3">250W TDP | Muy silencioso</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $90</li>
+                            <li class="list-group-item"><b>Stock:</b> 15 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://www.noctua.at/_next/image?url=https%3A%2F%2Fcdn.noctua.at%2Fmedia%2Fnoctua_nh_u12a_1.jpg&w=3840&q=75" class="card-img-top"
+                            alt="Enfriador 240mm">
+                        <div class="card-body">
+                            <h5 class="card-title">Noctua NH-U12A</h5>
+                            <p class="card-text">Rendimiento superior con diseño compacto</p>
+                            <p class="text-muted mb-3">170W TDP | Premium</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $110</li>
+                            <li class="list-group-item"><b>Stock:</b> 10 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MEMORIAS RAM -->
+        <section id="memorias-ram" class="mb-5 pb-5" style="border-bottom: 2px solid #e0e0e0;">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">🖥️</span> Memorias RAM</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://www.invidcomputers.com/images/000000000041499675700CMH32GX5M2D6000Z36K.png"
+                            class="card-img-top" alt="RAM 32GB DDR5">
+                        <div class="card-body">
+                            <h5 class="card-title">Corsair Vengeance 32GB DDR5 6000MHz</h5>
+                            <p class="card-text">Memoria de alta velocidad para gaming y profesionales</p>
+                            <p class="text-muted mb-3">2x16GB | 6000 MHz CAS 30</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $350</li>
+                            <li class="list-group-item"><b>Stock:</b> 20 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://www.gskill.com/_upload/images/153605100710.png"
+                            class="card-img-top" alt="RAM 16GB DDR4">
+                        <div class="card-body">
+                            <h5 class="card-title">G.Skill Ripjaws 16GB DDR4 3600MHz</h5>
+                            <p class="card-text">Opción económica y confiable para sistemas</p>
+                            <p class="text-muted mb-3">2x8GB | 3600 MHz CAS 18</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $120</li>
+                            <li class="list-group-item"><b>Stock:</b> 30 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://m.media-amazon.com/images/I/715QXNdKxiL._AC_UF894,1000_QL80_.jpg"
+                            class="card-img-top" alt="RAM 64GB DDR5">
+                        <div class="card-body">
+                            <h5 class="card-title">Kingston Fury 64GB DDR5 6400MHz</h5>
+                            <p class="card-text">Para workstations y tareas profesionales intensivas</p>
+                            <p class="text-muted mb-3">4x16GB | 6400 MHz CAS 32</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $650</li>
+                            <li class="list-group-item"><b>Stock:</b> 8 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ALMACENAMIENTO -->
+        <section id="almacenamiento" class="mb-5 pb-5" style="border-bottom: 2px solid #e0e0e0;">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">💿</span> Almacenamiento</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://m.media-amazon.com/images/I/61D9foQdhDL.jpg"
+                            class="card-img-top" alt="SSD 2TB">
+                        <div class="card-body">
+                            <h5 class="card-title">Samsung 990 Pro 2TB NVMe</h5>
+                            <p class="card-text">SSD de máximo rendimiento con interface PCIe 4.0</p>
+                            <p class="text-muted mb-3">7,000 MB/s | Caché 7GB</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $300</li>
+                            <li class="list-group-item"><b>Stock:</b> 15 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://http2.mlstatic.com/D_Q_NP_867208-MLA99993265179_112025-O.webp"
+                            class="card-img-top" alt="SSD 1TB">
+                        <div class="card-body">
+                            <h5 class="card-title">WD Blue SN580 1TB NVMe</h5>
+                            <p class="card-text">SSD rápido y económico para gaming</p>
+                            <p class="text-muted mb-3">4,000 MB/s | Caché 1GB</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $110</li>
+                            <li class="list-group-item"><b>Stock:</b> 25 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://novicompu.vtexassets.com/arquivos/ids/161377-800-auto?v=637637107884430000&width=800&height=auto&aspect=true"
+                            class="card-img-top" alt="HDD 4TB">
+                        <div class="card-body">
+                            <h5 class="card-title">Seagate Barracuda 4TB HDD</h5>
+                            <p class="card-text">Disco duro de almacenamiento masivo</p>
+                            <p class="text-muted mb-3">5,400 RPM | 4TB capacidad</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $80</li>
+                            <li class="list-group-item"><b>Stock:</b> 18 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- MOTHERBOARDS -->
+        <section id="motherboards" class="mb-5 pb-5" style="border-bottom: 2px solid #e0e0e0;">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">📱</span> Motherboards</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://dlcdnwebimgs.asus.com/files/media/9A827026-9AD2-4CE7-9958-DB583A2DB6F8/v1/img/kv/ROG-Strix-Z790-E-Gaming.png" class="card-img-top"
+                            alt="Motherboard Z790">
+                        <div class="card-body">
+                            <h5 class="card-title">ASUS ROG STRIX Z790-E Gaming WIFI</h5>
+                            <p class="card-text">Motherboard premium para Intel Socket 1700</p>
+                            <p class="text-muted mb-3">ATX | DDR5 | PCIe 5.0</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $450</li>
+                            <li class="list-group-item"><b>Stock:</b> 7 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://storage-asset.msi.com/global/picture/image/feature/mb/B850M/B850M-GAMING-PRO-WIFI6E/b850m-gaming-plus-wifi-hero-exclusive.png" class="card-img-top"
+                            alt="Motherboard X870">
+                        <div class="card-body">
+                            <h5 class="card-title">MSI B850 GAMING PRO WIFI</h5>
+                            <p class="card-text">Motherboard mid-range para AMD Ryzen 7000</p>
+                            <p class="text-muted mb-3">ATX | DDR5 | PCIe 5.0</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $280</li>
+                            <li class="list-group-item"><b>Stock:</b> 12 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://static.gigabyte.com/StaticFile/Image/Global/4a4d59ed83404034feafbbf340b5c862/ProductRemoveBg/30352" class="card-img-top"
+                            alt="Motherboard B660">
+                        <div class="card-body">
+                            <h5 class="card-title">Gigabyte B660M DS3H DDR4</h5>
+                            <p class="card-text">Motherboard económica para Intel Socket 1700</p>
+                            <p class="text-muted mb-3">Micro ATX | DDR4 | USB 3.1</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $150</li>
+                            <li class="list-group-item"><b>Stock:</b> 20 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- GABINETES -->
+        <section id="gabinetes" class="mb-5 pb-5">
+            <h2 class="fw-bold mb-4"><span style="color: #007bff;">📦</span> Gabinetes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img src="https://m.media-amazon.com/images/I/71Ai2WrJ6XL._AC_SL1500_.jpg"
+                            class="card-img-top" alt="Gabinete ATX">
+                        <div class="card-body">
+                            <h5 class="card-title">NZXT H510 Flow ATX</h5>
+                            <p class="card-text">Gabinete moderno con excelente flujo de aire</p>
+                            <p class="text-muted mb-3">ATX | Templado | 2 ventiladores 120mm</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $100</li>
+                            <li class="list-group-item"><b>Stock:</b> 25 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://assets.corsair.com/image/upload/c_pad,q_85,h_1100,w_1100,f_auto/products/Cases/CC-9011240-WW/iCUE-4000D-RGB-AIRFLOW-Mid-Tower-Case_-Black---3x-AF120-RGB-ELITE-Fans---iCUE-Lighting-Node-PRO-Controller---High-airflow-Design-_CN_-0.webp" class="card-img-top"
+                            alt="Gabinete Gaming">
+                        <div class="card-body">
+                            <h5 class="card-title">Corsair iCUE 4000 Airflow RGB</h5>
+                            <p class="card-text">Gabinete gaming con iluminación RGB</p>
+                            <p class="text-muted mb-3">ATX | Templado 3D | RGB iluminación</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $150</li>
+                            <li class="list-group-item"><b>Stock:</b> 15 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="card h-100 shadow-sm"><img
+                            src="https://m.media-amazon.com/images/I/61w7TekLrIL.jpg" class="card-img-top"
+                            alt="Gabinete Compacto">
+                        <div class="card-body">
+                            <h5 class="card-title">Cooler Master NR200P MAX Mini ITX</h5>
+                            <p class="card-text">Gabinete compacto perfecto para builds pequeños</p>
+                            <p class="text-muted mb-3">Mini ITX | Templado | Compacto</p>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item"><b>Precio:</b> $80</li>
+                            <li class="list-group-item"><b>Stock:</b> 18 unidades</li>
+                            <li class="list-group-item"><b>Calificación:</b> ⭐⭐⭐⭐</li>
+                        </ul>
+                        <div class="card-body"><a href="#" class="card-link">Comprar</a><a href="#"
+                                class="card-link">Carrito</a></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <div class="alert alert-success mt-5 text-center" role="alert">
+            <h5 class="mb-3">¿Listo para Comprar?</h5>
+            <p class="mb-2">Todos nuestros productos cuentan con garantía y soporte técnico.</p><a href="./login.html"
+                class="btn btn-primary">Iniciar Sesión para Comprar</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 TechStore - Venta de Componentes de Computadora. Todos los derechos reservados.
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+
+
+
+ <!-- Para la barra de busqueda -->
+    <script>
+        const scrollNavbar = document.getElementById('scrollNavbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 120) {
+                scrollNavbar.classList.add('show-scroll');
+            } else {
+                scrollNavbar.classList.remove('show-scroll');
+            }
+        });
+
+        const searchInput = document.getElementById('searchInput');
+        const cards = document.querySelectorAll('.card.h-100');
+
+        function filterProducts() {
+            const filter = searchInput.value.trim().toLowerCase();
+            cards.forEach((card) => {
+                const text = card.textContent.toLowerCase();
+                const parentCol = card.closest('.col-md-4, .col-md-6, .col-lg-3');
+                if (!parentCol) return;
+                parentCol.style.display = !filter || text.includes(filter) ? '' : 'none';
+            });
+        }
+
+        searchInput?.addEventListener('input', filterProducts);
+    </script>
+</body>
+
+</html>

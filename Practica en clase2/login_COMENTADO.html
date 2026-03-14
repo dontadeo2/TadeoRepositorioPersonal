@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Iniciar sesión</title>
+    <!-- BOOTSTRAP: Link a Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <!-- PERSONALIZADO: Link a CSS personalizado -->
+    <link rel="stylesheet" href="../assets/css/miestilo.css">
+</head>
+
+<body>
+    <!--MENU DE NAVEGACIÓN-->
+    <!-- BOOTSTRAP: navbar (barra de navegación de Bootstrap) -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary shadow-sm">
+        <!-- BOOTSTRAP: container-fluid y navbar-brand -->
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="./index.html">
+                🛒 TechStore
+            </a>
+            <!-- BOOTSTRAP: navbar-toggler (botón para menú responsivo) -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- BOOTSTRAP: collapse navbar-collapse (contenedor colapsable de Bootstrap) -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <!-- BOOTSTRAP: navbar-nav, nav-item, nav-link -->
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="./index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./lista.html">Productos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./about.html">Acerca de</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- BOOTSTRAP: active (marca el elemento activo) -->
+                        <a class="nav-link active" href="./login.html">Iniciar sesión</a>
+                    </li>
+                </ul>
+                <!-- BOOTSTRAP: d-flex (flexbox), form-control (input de Bootstrap), btn btn-outline-success -->
+                <form class="d-flex" role="search">
+                    <input class="form-control me-2" type="search" placeholder="Buscar..." aria-label="Search" />
+                    <button class="btn btn-outline-success" type="submit">Buscar</button>
+                </form>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PERSONALIZADO: login-section (clase personalizada) -->
+    <div class="login-section">
+        <!-- BOOTSTRAP: container, mt-5 (margin-top), mb-5 (margin-bottom) -->
+        <div class="container mt-5 mb-5">
+            <!-- BOOTSTRAP: row (fila de grid), align-items-center (alineación vertical), g-4 (gap/espacios) -->
+            <div class="row align-items-center g-4">
+                <!-- BOOTSTRAP: col-lg-6 (columna de 6/12 en pantallas grandes) -->
+                <!-- Columna Izquierda: Formulario -->
+                <div class="col-lg-6">
+                    <!-- PERSONALIZADO: login-card (clase personalizada) -->
+                    <div class="login-card">
+                        <!-- BOOTSTRAP: text-center, mb-4 (margin-bottom) -->
+                        <div class="text-center mb-4">
+                            <!-- BOOTSTRAP: fw-bold (font-weight bold), text-dark -->
+                            <h2 class="fw-bold text-dark">
+                                👤 Inicia Sesión
+                            </h2>
+                            <!-- BOOTSTRAP: text-muted (texto gris) -->
+                            <p class="text-muted">Accede a tu cuenta para comprar componentes de calidad</p>
+                        </div>
+                        
+                        <form>
+                            <!-- BOOTSTRAP: form-floating (etiquetas flotantes), form-control, border-0, shadow-sm, mb-3 -->
+                            <div class="form-floating mb-3">
+                                <input type="email" class="form-control border-0 shadow-sm" id="floatingInput" 
+                                    placeholder="name@example.com" required>
+                                <label for="floatingInput">
+                                    ✉️ Correo electrónico
+                                </label>
+                            </div>
+                            
+                            <!-- BOOTSTRAP: form-floating (idem arriba) -->
+                            <div class="form-floating mb-3">
+                                <input type="password" class="form-control border-0 shadow-sm" id="floatingPassword" 
+                                    placeholder="Password" required>
+                                <label for="floatingPassword">
+                                    🔒 Contraseña
+                                </label>
+                            </div>
+
+                            <!-- BOOTSTRAP: form-check, form-check-input, form-check-label, mb-4 -->
+                            <div class="form-check mb-4">
+                                <input class="form-check-input" type="checkbox" id="remember">
+                                <label class="form-check-label" for="remember">
+                                    Recuérdame en este dispositivo
+                                </label>
+                            </div>
+
+                            <!-- BOOTSTRAP: btn btn-primary, btn-lg, w-100 (ancho 100%), mb-3, shadow-sm -->
+                            <button type="submit" class="btn btn-primary btn-lg w-100 mb-3 shadow-sm">
+                                ➜ Iniciar Sesión
+                            </button>
+
+                            <!-- BOOTSTRAP: hr (línea separadora de Bootstrap) -->
+                            <hr>
+
+                            <!-- BOOTSTRAP: text-center, mb-2, mb-0, link-primary fw-bold, link-secondary -->
+                            <div class="text-center">
+                                <p class="mb-2">¿No tienes cuenta? 
+                                    <a href="#" class="link-primary fw-bold">Regístrate aquí</a>
+                                </p>
+                                <p class="mb-0">
+                                    <a href="#" class="link-secondary small">¿Olvidaste tu contraseña?</a>
+                                </p>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- BOOTSTRAP: col-lg-6 (columna derecha) -->
+                <!-- Columna Derecha: Imagen -->
+                <div class="col-lg-6">
+                    <!-- PERSONALIZADO: image-container (clase personalizada) -->
+                    <div class="image-container text-center">
+                        <!-- PERSONALIZADO: placeholder-image (clase personalizada) -->
+                        <div class="placeholder-image">
+                            <!-- BOOTSTRAP: img-fluid (imagen responsiva), rounded-4 (bordes redondeados), shadow-lg (sombra grande) -->
+                            <img src="https://via.placeholder.com/450x550?text=Componentes+de+PC&bg=e3f2fd&fg=1976d2" 
+                                alt="Componentes de Computadora" class="img-fluid rounded-4 shadow-lg">
+                        </div>
+                        <!-- BOOTSTRAP: mt-4 (margin-top), text-muted, small -->
+                        <div class="mt-4">
+                            <p class="text-muted small">
+                                <em>✎ Reemplaza esta imagen con una foto de tus componentes</em>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- BOOTSTRAP: footer bg-dark, text-white, mt-5, py-4 (padding vertical) -->
+    <!-- Footer -->
+    <footer class="bg-dark text-white mt-5 py-4">
+        <!-- BOOTSTRAP: container, text-center, mb-0 -->
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 TechStore - Venta de Componentes de Computadora. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- BOOTSTRAP: Script de Bootstrap (necesario para funcionalidades interactivas como el navbar toggle) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+<!-- 
+═══════════════════════════════════════════════════════════════════════════════
+                           RESUMEN DE BOOTSTRAP USADO
+═══════════════════════════════════════════════════════════════════════════════
+
+COMPONENTES DE BOOTSTRAP:
+─────────────────────────
+✓ navbar                    - Barra de navegación responsiva
+✓ navbar-expand-lg          - Hace que el navbar se expanda en pantallas grandes
+✓ navbar-brand              - Título/marca del navbar
+✓ navbar-toggler            - Botón para expandir/contraer el menú
+✓ navbar-collapse           - Contenedor colapsable
+✓ navbar-nav                - Lista de navegación
+✓ nav-item / nav-link       - Elementos individuales del menú
+✓ active                    - Marca el elemento activo
+✓ container / container-fluid - Contenedor responsivo
+✓ row                       - Fila de la cuadrícula
+✓ col-lg-6                  - Columna que ocupa 6/12 en pantallas grandes
+✓ form-floating             - Etiquetas de formulario flotantes
+✓ form-control              - Campos de input estilizados
+✓ form-check                - Checkbox estilizado
+✓ btn / btn-primary         - Botones estilizados
+✓ btn-outline-success       - Botón con borde
+✓ img-fluid                 - Imagenes responsivas
+✓ bg-dark / bg-body-tertiary - Colores de fondo
+✓ text-white / text-muted / text-dark - Colores de texto
+✓ shadow-sm / shadow-lg     - Sombras
+✓ rounded-4                 - Bordes redondeados
+✓ w-100                     - Ancho 100%
+✓ border-0                  - Sin borde
+✓ link-primary / link-secondary - Colores de enlaces
+
+UTILIDADES DE ESPACIADO DE BOOTSTRAP:
+─────────────────────────────────────
+✓ mt-5 / mb-5 / mt-4 / mb-4 / mb-3 / mb-2 / mb-0  - Márgenes (margin)
+✓ py-4 / px-*                                     - Padding (relleno)
+✓ me-2 / me-auto                                  - Margin-end (derecha)
+✓ g-4                                            - Gap (espacios entre columnas)
+
+CLASES DE BOOTSTRAP PARA FLEXBOX:
+─────────────────────────────────
+✓ d-flex                    - Display flex
+✓ align-items-center        - Alineación vertical al centro
+✓ fw-bold                   - Font-weight bold
+✓ text-center               - Texto centrado
+✓ small                     - Texto pequeño
+
+CLASES PERSONALIZADAS (no son Bootstrap):
+──────────────────────────────────────────
+✗ login-section             - Contenedor personalizado de la sección de login
+✗ login-card                - Tarjeta personalizada del formulario
+✗ image-container           - Contenedor personalizado de imagen
+✗ placeholder-image         - Contenedor personalizado de placeholder
+
+═══════════════════════════════════════════════════════════════════════════════
+                           PORCENTAJE DE BOOTSTRAP
+═══════════════════════════════════════════════════════════════════════════════
+
+✓ ~90% del código HTML usa clases de Bootstrap
+✗ ~10% usa clases CSS personalizadas (importadas del archivo miestilo.css)
+
+FUNCIONALIDADES BOOTSTRAP PRINCIPALES:
++ Sistema de Grid responsivo (row, col-lg-6)
++ Componentes pre-diseñados (navbar, form, buttons)
++ Utilidades de espaciado (margin, padding)
++ Temas de colores y tipografía
++ Efectos visuales (sombras, bordes redondeados)
++ Sistema de breakpoints responsivos
++ Transiciones y animaciones básicas
+
+═══════════════════════════════════════════════════════════════════════════════
+-->
