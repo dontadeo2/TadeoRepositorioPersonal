@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoScan | Tu opinión cuenta</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo-container">
+            <img src="EcoScan.png" alt="Logo EcoScan" class="logo">
+            <h1>EcoScan</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#proyecto">El Proyecto</a></li>
+                <li><a href="#comentarios">Comentarios</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h2>Mejoramos tu experiencia universitaria</h2>
+            <p>Escaneando nuestro código QR o haciendo clic en el botón, ayúdanos a evaluar y mejorar la calidad del servicio, limpieza y atención en los locales de la UTLVTE.</p>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfdX3gHtISahDIsKw1xqHi6ZltJ0DI6uvIcDvE4cPd2u_IFnQ/viewform?usp=dialog" target="_blank" class="btn-primary">Llenar Encuesta</a>
+        </div>
+        <div class="hero-qr">
+            <h3>¡Escanea y Opina!</h3>
+            <img src="Mi_código_QR_2-1024.jpeg" alt="Código QR EcoScan">
+        </div>
+    </section>
+
+    <section id="proyecto" class="info-section">
+        <h2>¿Por qué nace EcoScan?</h2>
+        <p>En muchos establecimientos universitarios no existe un sistema eficiente para recopilar la opinión de los estudiantes y clientes. La falta de retroalimentación limita la mejora continua en la limpieza, la atención y los productos ofrecidos. <strong>EcoScan</strong> es la herramienta digital rápida y accesible para que tu voz genere cambios reales.</p>
+    </section>
+
+    <section id="comentarios" class="comments-section">
+        <h2>Experiencias en los locales</h2>
+        <p>Déjanos tu comentario rápido sobre algún local de la universidad:</p>
+        
+        <form id="comment-form" class="comment-form">
+            <input type="text" id="userName" placeholder="Tu nombre o anónimo" required>
+            <textarea id="userComment" rows="4" placeholder="Escribe tu comentario aquí..." required></textarea>
+            <button type="submit" class="btn-secondary">Publicar comentario</button>
+        </form>
+
+        <div id="comments-container" class="comments-container">
+            </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <p><strong>Universidad Técnica “Luis Vargas Torres”</strong></p>
+            <p>Emprendimiento e Innovación Tecnológica</p>
+            <p>Contacto / Soporte: <a href="https://wa.me/593997882049" target="_blank">0997882049</a></p>
+            <p>&copy; 2026 EcoScan. Desarrollado por Angel Ballesteros y Jenniffer Quiñonez.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
